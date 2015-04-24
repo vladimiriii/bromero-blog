@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Brett Romero | Labor Stats Intro</title>
+	<link type="text/css" rel="stylesheet" href="../css/stylesheet.css"/>
+</head>
+<body class="blog">
+	
+	<!-- Facebook SDK -->
+	<script>
+	  window.fbAsyncInit = function() {
+	    FB.init({
+	      appId      : '789479387802731',
+	      xfbml      : true,
+	      version    : 'v2.3'
+	    });
+	  };
+
+	  (function(d, s, id){
+	     var js, fjs = d.getElementsByTagName(s)[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement(s); js.id = id;
+	     js.src = "//connect.facebook.net/en_US/sdk.js";
+	     fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+	</script>
+	
+	<div class="header">
+		<div class="menu_bar">
+			<div class="title">
+				<h1>BRETT ROMERO</h1>
+				<h2 class="tagline">Data Inspired Insights</h2>
+				</br>
+			</div>
+			<div class="menu">
+				<ul class="nav_bar">
+					<li><a href="../index.html">Overview</a></li>
+					<li id="blog_btn"><a href="../blog.html">Blog</a></li>
+					<li><a href="../resume.html">Resume</a></li>
+					<li><a href="../reading.html">Reading/Links</a></li>
+					<li><a href="../data.html">Datasets</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="contact_bar">
+			<h4 class="get_in_touch">Get in touch!</h4>
+			<div class="buttons">
+				<a href="mailto:brett.romero@outlook.com"><img src="../images/1426604526_Android-Email.png"/></a>
+				<a href="https://twitter.com/MrBrettRomero" target="_blank"><img src="../images/1426602903_social_twitter_box_blue.png"/></a>
+				<a href="https://www.facebook.com/brett.romero.9" target="_blank"><img src="../images/1426602912_social_facebook_box_blue.png"/></a>
+				<a href="https://www.linkedin.com/pub/brett-romero/49/b0/88" target="_blank"><img src="../images/1426602920_social_linkedin_box_blue.png"/></a>
+			</div>
+		</div>
+	</div>
+	<div id="blog">
+		<a href="../blog.html"><p class="breadcrumbs">Back to Blog Home</p></a>
+		
+		<!-- Twitter Button -->
+		<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://brettromero.com/articles/labor_stats_1.html" data-via="MrBrettRomero">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		
+		<!-- Facebook Button -->
+		<div class="fb-like" data-href="http://brettromero.com/articles/labor_stats_1.html" data-layout="button" 		data-action="like" data-show-faces="false" data-share="true"></div>
+		
+		<!-- Linkedin Button -->
+		<div class="linkedin_button">	
+			<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+			<script type="IN/Share" data-url="http://brettromero.com/articles/labor_stats_1.html" data-counter="right"></script>
+		</div>
+		
+		<h3 class="blog_title">Labor Statistics Part I - Setting the Scene</h3>
+		<h4 class="author_date">Brett Romero | 3 April 2015</h4>
+		<img class="blog_image" src="../articles/blog_images/XB000014.jpg" alt=""/>
+		<p>
+		    The unemployment rate: in western countries this tends to be one of the most discussed and politicized of the official statistics produced by Governments.
+		    In the US, the unemployment rate has been under a higher than usual level of scrutiny since the 2008 financial meltdown led to historically high levels of
+		    unemployment.
+		</p>
+		<p>
+		    However, as of February 2015 the unemployment rate has fallen to 5.5%, meaning it is back within the normal historical range and is expected to keep
+		    falling. So everything is all good right? Maybe.
+		</p>
+		<h4 style="clear:both">Chart 1 - US Unemployment Rate Jun 1976 to Feb 2015</h4>
+		<img class="in_article_pic" src="../articles/blog_images/bls_charts/chart_1.jpg"/>
+		<p>
+		    Before we get into that, first a bit more detail on how the unemployment rate is calculated. For such a well-known statistic, it appears to be relatively
+		    poorly understood outside of the world of policy wonks. Ask the average person to guess how the unemployment rate is calculated and they are likely to
+		    guess something along the lines of the following:
+		</p>
+		<img class="in_article_pic" src="../articles/blog_images/bls_charts/equation_1.jpg"/>
+		<p>
+		    Someone with a bit more time to think on it may consider the fact that not all of the population are of a working age and factor that into their guess:
+		</p>
+		<img class="in_article_pic" src="../articles/blog_images/bls_charts/equation_2.jpg"/>
+		<p>
+		But even this more refined calculation would result in an unemployment rate well into the 30%-40% range. The reason for that is, as <a  href="http://www.bls.gov/dolfaq/bls_ques23.htm" target="_blank"><span class="in_article_link">the Bureau of Labor Statistics (BLS) outlines</span></a>, to qualify as unemployed, a person has to be part of the <i>Civilian non-institutional population </i><a href="#_ftn1" name="_ftnref1" title=""><sup>[1]</sup></a> and meet one of the following two criteria (emphasis
+		    mine):
+		</p>
+		<ul>
+			<li>had no employment during the reference week, were available for work, except for temporary illness, and had <b><i>made specific efforts to find employment some time during the 4 week-period ending with the reference week</i></b>, or</li>
+			<li>were waiting to be recalled to a job from which they had been laid off.</li>
+		</ul>
+		</br>
+		<p>
+		    As I am sure you can imagine, this definition leaves a lot of people that many would consider "unemployed" in some third pool, neither employed nor
+		    unemployed as the BLS defines it. These people are actually in a pool labeled "not in the labor force".
+		</p>
+		<p>
+		    From Bureau of Labor Statistics data, in 2014, people in the labor force made up 62.9% of the <i>Civilian non-institutional population</i>, leaving just
+		    over 92 million people outside the labor force. But this percentage of people in the labor force (also called the "Participation Rate") has changed
+		    significantly over time. Chart 2 shows the Participation Rate since 1947:
+		</p>
+		<h4>Chart 2 - US Participation Rate 1947 to 2014</h4>
+		<img class="in_article_pic" src="../articles/blog_images/bls_charts/chart_2.jpg"/>
+		<p>There are several interesting things to notice here.</p>
+		<p>
+		    Firstly, from the early 60s until the late 90's, the percentage of people considered in the labor force surged - from 58.7% in 1963 to 67.1% in the year
+		    2000. To give you an idea of how that translates into numbers of people, that increase meant there were an additional 17.8 million people in the labor
+		    force in the year 2000 than there would have been if the participation rate from 1963 had remained unchanged.
+		</p>
+		<p>
+		    Who were all these extra people? Most of this increase represents the movement of women into the labor force over time and the rise of the two income
+		    household, both of which can be seen in the increasing participation rate for woman (see Chart 3). Although this indirectly led to a lower participation
+		    rate for men, the overall result was an increase in the participation rate in general.
+		</p>
+		<h4>Chart 3 - Participation Rate by Gender 1948 to 2014</h4>
+		<img class="in_article_pic" src="../articles/blog_images/bls_charts/chart_3.jpg"/>
+		<p>
+		    The other major trend we can see in the Participation Rate over time is the downwards trend since 2000. By the end of 2014 the US had returned to a
+		    Participation Rate not seen since 1977. The result is that even though the headline unemployment rate has dropped back down to 5.5% as of February 2015,
+		    once the lower participation rate is factored, the picture isn't nearly as rosy, as shown in Chart 4:
+		</p>
+		<h4>Chart 4 - Participation Rate vs. Employed Population as a Percentage of Total Population 1947 to 2014</h4>
+		<img class="in_article_pic" src="../articles/blog_images/bls_charts/chart_4.jpg"/>
+		<p>
+		This has not gone unnoticed (see <a href="http://www.forbes.com/sites/aparnamathur/2015/02/06/reasons-to-still-worry-about-labor-force-participation/" target="_blank">
+			<span class="in_article_link">Forbes</span></a>, 
+			<a href="http://money.cnn.com/2013/09/06/news/economy/labor-force-participation/" target="_blank"><span class="in_article_link">CNN</span></a> and 
+			<a href="http://www.bloomberg.com/news/articles/2015-01-19/why-labor-force-participation-is-still-so-low" target="_blank"><span class="in_article_link">Bloomberg</span></a> for example), but what is the cause
+		    and what impact does this have for public policy going forward? This will be something we will explore over the next few weeks in a series of articles -
+		    watch this space.
+		</p>
+		<p>In the meantime, keep an eye on the <a href="../data.html"><span class="in_article_link">Datasets section</span></a> of this website for downloads of the various datasets being used in these articles.</p>
+		<h4>Related Content</h4>
+		<p>
+			<ul>
+				<li>Go to <a  href="./labor_stats_2.html"><span class="in_article_link">Labor Statistics Part II - Who are the People Not in the Labor Force</span></a></ul>
+			</ul>
+		</p>
+		<div>
+		    <br clear="all"/>
+		    <hr align="left" size="1" width="33%"/>
+		    <div id="ftn1">
+		        <p>
+		            <a href="#_ftnref1" name="_ftn1" title="">[1]</a>
+		            Persons 16 years of age and older residing in the 50 states and the District of Columbia, who are not inmates of institutions (e.g., penal and
+		            mental facilities, homes for the aged), and who are not on active duty in the Armed Forces.
+		        </p>
+		    </div>
+		</div>
+		
+	</div>
+	<div class="footer">
+		<p>Designed and built by Brett Romero</p>
+	</div>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-60963697-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Brett Romero | Excel Tips 1</title>
+	<link type="text/css" rel="stylesheet" href="../css/stylesheet.css"/>
+</head>
+<body class="blog">
+	
+	<!-- Facebook SDK -->
+	<script>
+	  window.fbAsyncInit = function() {
+	    FB.init({
+	      appId      : '789479387802731',
+	      xfbml      : true,
+	      version    : 'v2.3'
+	    });
+	  };
+
+	  (function(d, s, id){
+	     var js, fjs = d.getElementsByTagName(s)[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement(s); js.id = id;
+	     js.src = "//connect.facebook.net/en_US/sdk.js";
+	     fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+	</script>
+	
+	<div class="header">
+		<div class="menu_bar">
+			<div class="title">
+				<h1>BRETT ROMERO</h1>
+				<h2 class="tagline">Data Inspired Insights</h2>
+				</br>
+			</div>
+			<div class="menu">
+				<ul class="nav_bar">
+					<li><a href="../index.html">Overview</a></li>
+					<li id="blog_btn"><a href="../blog.html">Blog</a></li>
+					<li><a href="../resume.html">Resume</a></li>
+					<li><a href="../reading.html">Reading/Links</a></li>
+					<li><a href="../data.html">Datasets</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="contact_bar">
+			<h4 class="get_in_touch">Get in touch!</h4>
+			<div class="buttons">
+				<a href="mailto:brett.romero@outlook.com"><img src="../images/1426604526_Android-Email.png"/></a>
+				<a href="https://twitter.com/MrBrettRomero" target="_blank"><img src="../images/1426602903_social_twitter_box_blue.png"/></a>
+				<a href="https://www.facebook.com/brett.romero.9" target="_blank"><img src="../images/1426602912_social_facebook_box_blue.png"/></a>
+				<a href="https://www.linkedin.com/pub/brett-romero/49/b0/88" target="_blank"><img src="../images/1426602920_social_linkedin_box_blue.png"/></a>
+			</div>
+		</div>
+	</div>
+	<div id="blog">
+		<a href="../blog.html"><p class="breadcrumbs">Back to Blog Home</p></a>
+		
+		<!-- Twitter Button -->
+		<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://brettromero.com/articles/excel_1.html" data-via="MrBrettRomero">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		
+		<!-- Facebook Button -->
+		<div class="fb-like" data-href="http://brettromero.com/articles/excel_1.html" data-layout="button" 		data-action="like" data-show-faces="false" data-share="true"></div>
+		
+		<!-- Linkedin Button -->
+		<div class="linkedin_button">	
+			<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+			<script type="IN/Share" data-url="brettromero.com/articles/excel_1.html" data-counter="right"></script>
+		</div>
+		
+		<h3 class="blog_title">Excel Tips Part I - Template to Table</h3>
+		<h4 class="author_date">Brett Romero | 3 April 2015</h4>
+		<img class="blog_image" src="../articles/blog_images/green_bottle.jpg" alt=""/>
+		
+		<p>
+		    There was an interesting Excel problem I encountered a while back which I thought I would share as the solution ended up being quite well received and even
+		    got me a nice <a href="http://www.cafeselectnyc.com"><span class="in_article_link">Swiss dinner</span></a>.
+		</p>
+		<h4>Problem</h4>
+		<p>
+		    The problem arose out of a reasonably common scenario - a friend of mine had begun working in a new workplace where they had been using a MS Word template
+		    to collect the results of survey they had been undertaking. Being more of a data focused person, she managed to convince them to migrate the template to
+		    MS Excel as this would allow easier aggregation and analysis of the data. However, in convincing them to migrate, she had to design the Excel template in a
+		    manner more or less mirroring the Word template, which meant merged cells, data in various columns and rows on the spreadsheet, and generally no easy way
+		    to tabulate the data across multiple surveys.
+		</p>
+		<p>
+		    After the surveys starting coming in from various areas and she had spent an inordinate amount of time manually copying and pasting the results into a
+		    table, she asked me if there was a better way to do this.
+		</p>
+		<h4>Solution</h4>
+		<p>After a couple of false starts, I came to a point where I thought the only way to do this was going to be a macro. The issues with using a macro are:
+			<ul>
+		    	<li>if it breaks, it is likely that no one else will be able to fix it</li>
+		    	<li>it isn't easy for others to determine what exactly the macro is doing, and</li>
+		    	<li>moving a macro across multiple spreadsheets and workbooks can get messy.</li>
+			</ul>
+		</p>
+		<p>Asides from those issues, non-technical people tend to get a little squeamish around macros.</p>
+		<p>
+		    I ended up stumbling across this solution almost by pure chance as I happened to be doing something at work that resulted in me using an Excel function
+		    that I hadn't used very often: INDIRECT. What INDIRECT does is takes any string (either typed directly into the formula, referenced from another cell, or
+		    some combination of both) and tries to read it as a cell reference.
+		</p>
+		<p>
+		    For example - if you type "A3" into a cell, then reference that cell ("=A1" for example), the result will be that both the original cell and the cell with
+		    the reference will now read "A3". But what if you wanted the cell referencing the original cell to actually use the value in that cell as a reference to
+		    look up a third value in cell A3? That is where INDIRECT comes in:
+		</p>
+		<img class="in_article_pic" src="../articles/blog_images/excel_images/sample_1_1.jpg"/>
+		<p>
+		    In this simple example we have used it to reference a cell in the same sheet, but we can also use INDIRECT to build a reference to a different sheet or
+		    workbook. And that's where this is going. All the templates were the same - the same cell reference for each data point every time - but the name of the
+		    sheet (or workbook if they haven't been added together yet) was always different. So what if we use an INDIRECT formula to dynamically look up the name of
+		    the sheet, which the user inputs? We can then use that value to complete the cell references for all the cells looking up the information on that sheet.
+		    Here is an example of what that would look like:
+		</p>
+		<img class="in_article_pic" src="../articles/blog_images/excel_images/sample_1_2.jpg"/>
+		<p>Once you have the basic formula working there are 3 steps left:
+			<ol>
+		    	<li>Wrap the formula in an IFERROR clause ( =IFERROR(formula, "") ) so that if the 'Sheet Name' column is blank, you get blank data fields instead of a ton of #REF errors.</li>
+				<li>Manually 'program' the first row. You will have to ensure all the right cells are being looked up in the right columns.</li>
+				<li>Drag the formula down for as many rows as you like.</li>
+			</ol>
+		</p>
+		<p>
+		    Once this is done, users of the workbook will be able to move a completed template into this workbook, enter the sheet name in the table, and all the
+		    results should immediately populate in the table. No Macros, no mess, and a convenient and simple way to convert information from an irregularly formatted
+		    template into tabular data.
+		</p>
+		<p>Still confused? Please feel free to download this example file: <a href="../files/indirect_sample_file.xlsx" download="newfilename"><img id="resume_icon" src="../images/1427210118_folder_download.png"></a></p>
+		</p>
+		<h4>Related Content</h4>
+		<p>
+			<ul>
+				<li>Go to <a  href="./excel_2.html"><span class="in_article_link">Excel Tips Part II - Array Functions</span></a></ul>
+			</ul>
+		</p>
+	</div>
+	<div class="footer">
+		<p>Designed and built by Brett Romero</p>
+	</div>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-60963697-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+</body>
+</html>

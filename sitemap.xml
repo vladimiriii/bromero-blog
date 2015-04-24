@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://brettromero.com/</loc>
+  <lastmod>2015-04-02T20:21:16+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://brettromero.com/index.html</loc>
+  <lastmod>2015-04-02T20:21:16+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://brettromero.com/blog.html</loc>
+  <lastmod>2015-04-02T19:55:16+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://brettromero.com/resume.html</loc>
+  <lastmod>2015-03-29T15:54:46+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://brettromero.com/reading.html</loc>
+  <lastmod>2015-03-29T15:54:44+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://brettromero.com/data.html</loc>
+  <lastmod>2015-03-31T09:01:39+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://brettromero.com/articles/labor_stats_1.html</loc>
+  <lastmod>2015-04-02T19:55:57+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://brettromero.com/articles/productivity.html</loc>
+  <lastmod>2015-03-30T15:32:17+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://brettromero.com/Resume.html</loc>
+  <lastmod>2015-03-29T15:54:46+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+<url>
+  <loc>http://brettromero.com/files/brett_romero_resume.pdf</loc>
+  <lastmod>2015-03-29T15:56:23+00:00</lastmod>
+  <changefreq>daily</changefreq>
+</url>
+</urlset>

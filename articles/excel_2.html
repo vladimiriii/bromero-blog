@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Brett Romero | Excel Tips 2</title>
+	<link type="text/css" rel="stylesheet" href="../css/stylesheet.css"/>
+</head>
+<body class="blog">
+	
+	<!-- Facebook SDK -->
+	<script>
+	  window.fbAsyncInit = function() {
+	    FB.init({
+	      appId      : '789479387802731',
+	      xfbml      : true,
+	      version    : 'v2.3'
+	    });
+	  };
+
+	  (function(d, s, id){
+	     var js, fjs = d.getElementsByTagName(s)[0];
+	     if (d.getElementById(id)) {return;}
+	     js = d.createElement(s); js.id = id;
+	     js.src = "//connect.facebook.net/en_US/sdk.js";
+	     fjs.parentNode.insertBefore(js, fjs);
+	   }(document, 'script', 'facebook-jssdk'));
+	</script>
+	
+	<div class="header">
+		<div class="menu_bar">
+			<div class="title">
+				<h1>BRETT ROMERO</h1>
+				<h2 class="tagline">Data Inspired Insights</h2>
+				</br>
+			</div>
+			<div class="menu">
+				<ul class="nav_bar">
+					<li><a href="../index.html">Overview</a></li>
+					<li id="blog_btn"><a href="../blog.html">Blog</a></li>
+					<li><a href="../resume.html">Resume</a></li>
+					<li><a href="../reading.html">Reading/Links</a></li>
+					<li><a href="../data.html">Datasets</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="contact_bar">
+			<h4 class="get_in_touch">Get in touch!</h4>
+			<div class="buttons">
+				<a href="mailto:brett.romero@outlook.com"><img src="../images/1426604526_Android-Email.png"/></a>
+				<a href="https://twitter.com/MrBrettRomero" target="_blank"><img src="../images/1426602903_social_twitter_box_blue.png"/></a>
+				<a href="https://www.facebook.com/brett.romero.9" target="_blank"><img src="../images/1426602912_social_facebook_box_blue.png"/></a>
+				<a href="https://www.linkedin.com/pub/brett-romero/49/b0/88" target="_blank"><img src="../images/1426602920_social_linkedin_box_blue.png"/></a>
+			</div>
+		</div>
+	</div>
+	<div id="blog">
+		<a href="../blog.html"><p class="breadcrumbs">Back to Blog Home</p></a>
+		
+		<!-- Twitter Button -->
+		<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://brettromero.com/articles/excel_2.html" data-via="MrBrettRomero">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		
+		<!-- Facebook Button -->
+		<div class="fb-like" data-href="http://brettromero.com/articles/excel_2.html" data-layout="button" 		data-action="like" data-show-faces="false" data-share="true"></div>
+		
+		<!-- Linkedin Button -->
+		<div class="linkedin_button">	
+			<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+			<script type="IN/Share" data-url="brettromero.com/articles/excel_2.html" data-counter="right"></script>
+		</div>
+		
+		<h3 class="blog_title">Excel Tips Part II - Array Functions</h3>
+		<h4 class="author_date">Brett Romero | 15 April 2015</h4>
+		<img class="blog_image" src="../articles/blog_images/green_bottle.jpg" alt=""/>
+		<p>
+			Excel's array functions probably rival pivot tables for the title of most misunderstood and underutilized features available to Excel users. That is a shame as they are powerful tools that can be used to simply and elegantly address some of the key problems that users will regularly encounter. Although there is an almost endless list of ways in which array functions can be used, below I discuss three scenarios that I regularly encountered in which array functions can be useful.  
+		</p>
+		<h4>Ensuring Formula Consistency</h4>
+		<p>
+		    One of the simplest and most useful ways to utilize array functions is to ensure the consistency of formulae in large spreadsheets. There are numerous infamous examples where simple formula errors have undermined the credibility of analyses done in Excel (including a recent popular <a href="http://www.theverge.com/2013/4/17/4234136/excel-calculation-error-infamous-economic-study" target="_blank"><span class="in_article_link">economics paper</span></a>) and although this method (or any method for that matter) can't prevent all errors, it can help to minimize the places where things can go wrong.
+		</p>
+		<p>
+		    This method can be applied to any situation where you have a column or row in which you need to apply the same formula repeatedly (anywhere you would normally drag the formula across or down). To use an array function in this situation, select the full range of cells you need the formula to apply to and then create the formula in the same way you would normally, except replacing the single cell references with references to the range of cells instead. When the formula is ready, press Control + Shift + Enter to confirm it <a href="#_ftn1" name="_ftnref1" title=""><sup>[1]</sup></a>. A simple example summing two columns is shown below:
+		</p>
+		<img class="in_article_pic" src="../articles/blog_images/excel_images/sample_2_1.jpg"/>
+		<p>
+			Using this method ensures that the formulae are consistent and also that individual formula in the column or row cannot be modified. You can test how this works yourself - once you have created an array formula (or opened the example file at the bottom of this page) try to delete or modify one of the individual cell formulas. You should be presented with an error like the following:
+		</p>
+		<img class="in_article_pic" src="../articles/blog_images/excel_images/sample_2_2.jpg"/>
+		<p>This error prevents any modifications that users may inadvertently make, including the deletion of a row or column in the dataset.</p> 
+		<h4>Transposing Datasets</h4>
+		<p>
+			Occasionally the need will arise to transpose data (convert data that runs across a row into data that runs down a column, or vice versa). In my experience, these cases typically involve time series data running across a spreadsheet being transposed to run down the spreadsheet to make it easier to view. 
+		</p>
+		<p>
+			The method here is to highlight the cells where you want the transposed results to display and enter the function "=TRANSPOSE( ", then highlight the values to be transposed. Note, that if the size of the ranges selected do not match (e.g. the number of columns to be transposed is greater than the number of rows in the range selected to display the results) the extra values will be dropped, or in the reverse case, the extra cells in the result set will be display as errors. An example is provided below:
+		</p>
+		<img class="in_article_pic" src="../articles/blog_images/excel_images/sample_2_3.jpg"/>
+		<p>
+			The big advantage of doing this (as opposed to simply copying and pasting the set with the transpose option selected) is that it maintains a live connection. Any updates in the original dataset will be reflected in the transposed dataset.
+		</p>
+		<h4>SUMIF with two conditions</h4>
+		<p>
+			One of the primary reasons I started learning about array functions was this exact problem - how do I do a SUMIF with two conditions? This may seem like an esoteric requirement but, as the datasets you are working with become more complex, the need to summarize the data by multiple criteria becomes increasingly useful. Looking at an example, let's imagine we have a small dataset of campaign contributions that contains the name, gender, city and the amount contributed for 10 individuals. This data is shown below:
+		</p>
+		<img class="in_article_pic" src="../articles/blog_images/excel_images/sample_2_4.jpg"/>
+		<p>Now let's imagine you want to identify the total contributions from all females in Boston. Broadly speaking, there are three ways you can do this:
+			<ol>
+				<li>Manually select all the values and add them up</li>
+		    	<li>Create a pivot table <a href="#_ftn2" name="_ftnref2" title=""><sup>[2]</sup></a></li>
+				<li>Use an array formula</li>
+			</ol>
+		</p>
+		<p>
+		    Often, the actual dataset is too big for method 1 (any dataset with more than 10 entries probably falls into this category), and a pivot table can be overkill when you only need to derive one value. In these cases, method 3 can be the simplest option. 
+		</p>
+		<p>
+		    To create our SUMIF with two criteria, we create a formula that actually looks like a SUMIF in some ways. Essentially we create two nested IF statements inside a SUM function. Our final formula is going to be as follows (if you are recreating this, don't forget to use Control + Shift + Enter):
+		</p>
+		<img class="in_article_pic" src="../articles/blog_images/excel_images/sample_2_5.jpg"/>
+		<p>
+			The formula works by creating an array of TRUEs and FALSEs based on the criteria specified in the IF statements (i.e. that the value in the gender column = "F" and the value in the City column = "Boston").  If both conditions are met, the formula captures the corresponding value in the specified range (the contributions column in this case); otherwise, the FALSE value (zero) is captured. Once there is an array of values and zeroes, the SUM function will sum up all the values to provide the answer. 
+		</p>
+		<p>Finally, this structure can also be used for a range of functions including:
+			<ul>
+				<li>MAX - replace SUM with MAX</li>
+				<li>MIN - replace SUM with MIN and the false value (zero) with a value larger than the maximum value in the dataset</li>
+				<li>COUNT - set the TRUE value to 1 instead of a range</li>
+				<li>AVERAGE - use the COUNT and SUM functions described above to create an average</li>
+			</ul>
+		</p>
+	</br>
+		<p>Still confused? Please feel free to download this example file: <a href="../files/array_functions.xlsx" download="newfilename"><img id="resume_icon" src="../images/1427210118_folder_download.png"></a></p>
+		</p>
+		<h4>Related Content</h4>
+		<p>
+			<ul>
+				<li>Go to <a  href="./excel_1.html"><span class="in_article_link">Excel Tips Part I - Template to Table</span></a></ul>
+			</ul>
+		</p>
+	</br></br>
+		<div>
+		    <hr align="left" size="1" width="33%"/>
+		    <div id="ftn1">
+		        <p>
+		            <a href="#_ftnref1" name="_ftn1" title="">[1]</a>
+		            This combination confirms to Excel that the formula is an array formula. If you simply press enter, the formula will not work as expected.
+		            Completed array formulas will display in the formula bar surrounded by {}, but you do not manually type these characters in.
+		        </p>
+		    </div>
+		</div>
+		<div>
+		    <br clear="all"/>
+		    <hr align="left" size="1" width="33%"/>
+		    <div id="ftn2">
+		        <p>
+		            <a href="#_ftnref2" name="_ftn2" title="">[2]</a>
+		            Pivot tables are very useful for a range of purposes, but will be covered in a separate blog entry
+		        </p>
+		    </div>
+		</div>
+	</div>
+	<div class="footer">
+		<p>Designed and built by Brett Romero</p>
+	</div>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-60963697-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+</body>
+</html>
